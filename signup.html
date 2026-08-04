@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRI MITRA | Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">🌾 AGRI MITRA</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <section class="auth-card">
+            <div class="auth-header">
+                <h2>Create Account</h2>
+                <p>Sign up as a new AGRI MITRA farmer.</p>
+            </div>
+
+            <form class="auth-form active-form" id="signupForm">
+                <label>Farmer Name</label>
+                <input type="text" placeholder="Your name" required>
+                <label>Email</label>
+                <input type="email" placeholder="name@example.com" required>
+                <label>Password</label>
+                <input type="password" placeholder="Create password" required>
+                <button type="submit" class="btn-primary full-width">Create Account</button>
+            </form>
+
+            <div class="page-links">
+                <a href="login.html">Already have an account?</a>
+                <a href="dashboard.html">Go to prediction page</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="signup.js"></script>
+</body>
+</html>

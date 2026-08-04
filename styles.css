@@ -1,0 +1,257 @@
+:root {
+    --bg: #f4f8f1;
+    --primary: #2e8b57;
+    --primary-dark: #1f6b40;
+    --text: #1f2a1f;
+    --card: #ffffff;
+    --line: #d9e7d7;
+    --soft: #f5fbf3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(180deg, #f7fbf5 0%, #edf6ea 100%);
+    color: var(--text);
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 6%;
+    background: rgba(20, 54, 33, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.brand {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #ecf8ee;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+    padding: 60px 6% 40px;
+    align-items: center;
+}
+
+.hero-copy h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+.eyebrow {
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 680px;
+}
+
+.hero-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    border: none;
+    border-radius: 999px;
+    padding: 13px 22px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #e9f7eb;
+    color: var(--primary-dark);
+}
+
+.hero-panel {
+    display: grid;
+    gap: 16px;
+}
+
+.panel-card, .auth-card, .form-card, .result-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(32, 55, 34, 0.08);
+}
+
+.panel-card {
+    padding: 22px;
+}
+
+.panel-card span {
+    color: var(--primary-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.panel-card ul {
+    margin-top: 12px;
+    padding-left: 18px;
+    line-height: 1.9;
+}
+
+.highlight strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.15rem;
+}
+
+.page-shell {
+    padding: 60px 6% 40px;
+}
+
+.auth-card {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.auth-header h2 {
+    margin-bottom: 8px;
+}
+
+.auth-header p {
+    color: #5f7061;
+    margin-bottom: 18px;
+}
+
+.auth-form {
+    display: grid;
+    gap: 12px;
+}
+
+.auth-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.page-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.page-links a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.dashboard {
+    padding: 0 6% 48px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.form-card {
+    padding: 24px;
+}
+
+.full-width-card {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.form-card h2, .result-card h2 {
+    margin-bottom: 18px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+input {
+    border: 1px solid #cddcc0;
+    border-radius: 10px;
+    padding: 11px 12px;
+    background: #fbfef9;
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+input::placeholder {
+    color: #738575;
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+    .hero,
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero,
+    .dashboard,
+    .page-shell {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRI MITRA | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">🌾 AGRI MITRA</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard" id="dashboard">
+            <div class="form-card full-width-card">
+                <h2>Prediction Dashboard</h2>
+                <form id="cropForm">
+                    <div class="grid">
+                        <input type="number" id="temperature" value="25" placeholder="Temperature (°C)" required>
+                        <input type="number" id="humidity" value="50" placeholder="Humidity (%)" required>
+                        <input type="number" id="ph" value="6.5" step="0.1" placeholder="Soil pH" required>
+                        <input type="number" id="rainfall" value="150" placeholder="Rainfall (mm)" required>
+                        <input type="number" id="nitrogen" value="80" placeholder="Nitrogen (N)" required>
+                        <input type="number" id="phosphorus" value="60" placeholder="Phosphorus (P)" required>
+                        <input type="number" id="potassium" value="70" placeholder="Potassium (K)" required>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Predict Crop</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
