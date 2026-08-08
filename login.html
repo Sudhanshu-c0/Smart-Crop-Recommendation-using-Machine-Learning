@@ -28,11 +28,12 @@
             </div>
 
             <form class="auth-form active-form" id="loginForm">
-                <label>Email</label>
-                <input type="email" placeholder="farmer@email.com" required>
-                <label>Password</label>
-                <input type="password" placeholder="Enter password" required>
+                <label for="loginEmail">Email</label>
+                <input id="loginEmail" name="email" type="email" placeholder="farmer@email.com" required>
+                <label for="loginPassword">Password</label>
+                <input id="loginPassword" name="password" type="password" placeholder="Enter password" required>
                 <button type="submit" class="btn-primary full-width">Login</button>
+                <div class="message" id="loginMessage"></div>
             </form>
 
             <div class="page-links">

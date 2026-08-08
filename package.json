@@ -1,0 +1,10 @@
+{
+  "name": "agri-mitra",
+  "version": "1.0.0",
+  "description": "AGRI MITRA static frontend with local Node.js backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT"
+}
