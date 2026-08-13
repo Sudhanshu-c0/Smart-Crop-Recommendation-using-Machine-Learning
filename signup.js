@@ -1,50 +1,174 @@
-const signupForm = document.getElementById('signupForm');
+const signupForm = document.getElementById("signupForm");
 
 if (signupForm) {
-    signupForm.addEventListener('submit', async (event) => {
+
+    signupForm.addEventListener("submit", async (event) => {
+
         event.preventDefault();
 
-        const name = signupForm.name.value;
-        const email = signupForm.email.value;
-        const password = signupForm.password.value;
-        const message = document.getElementById('signupMessage');
+
+        // ================= GET FORM DATA =================
+
+        const name =
+            signupForm.name.value.trim();
+
+        const email =
+            signupForm.email.value.trim();
+
+        const password =
+            signupForm.password.value;
+
+        const message =
+            document.getElementById("signupMessage");
+
+
+        // ================= VALIDATION =================
 
         if (!name || !email || !password) {
-            message.textContent = 'All fields are required.';
-            message.className = 'message error';
+
+            message.textContent =
+                "Please fill in all fields.";
+
+            message.className =
+                "message error";
+
             return;
         }
 
+
+        if (password.length < 6) {
+
+            message.textContent =
+                "Password must contain at least 6 characters.";
+
+            message.className =
+                "message error";
+
+            return;
+        }
+
+
+        // ================= LOADING =================
+
+        message.textContent =
+            "🌱 Creating your AGRI MITRA account...";
+
+        message.className =
+            "message";
+
+
         try {
-            message.textContent = 'Registering farmer profile...';
-            message.className = 'message';
 
-            const response = await fetch('http://localhost:3000/api/auth/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name, email, password })
-            });
+            // ================= API REQUEST =================
 
-            const data = await response.json();
+            const response = await fetch(
+                "http://localhost:3000/api/auth/signup",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        password: password
+                    })
+                }
+            );
+
+
+            // ================= RESPONSE =================
+
+            let data;
+
+            try {
+
+                data = await response.json();
+
+            } catch {
+
+                data = {};
+
+            }
+
+
+            // ================= REGISTRATION FAILED =================
 
             if (!response.ok) {
-                message.textContent = data.message || 'Registration failed.';
-                message.className = 'message error';
+
+                message.textContent =
+                    data.message ||
+                    "Registration failed. Please try again.";
+
+                message.className =
+                    "message error";
+
                 return;
             }
 
-            localStorage.setItem('agriMitraUser', JSON.stringify(data.user));
-            message.textContent = 'Account created. Redirecting...';
-            message.className = 'message success';
+
+            // ================= SAVE USER =================
+
+            if (data.user) {
+
+                localStorage.setItem(
+                    "agriMitraUser",
+                    JSON.stringify(data.user)
+                );
+
+            }
+
+
+            // Save authentication token if provided
+
+            if (data.token) {
+
+                localStorage.setItem(
+                    "agriMitraToken",
+                    data.token
+                );
+
+            }
+
+
+            // ================= SUCCESS =================
+
+            message.textContent =
+                "✓ Account created successfully!";
+
+            message.className =
+                "message success";
+
+
+            // ================= REDIRECT =================
 
             setTimeout(() => {
-                window.location.href = 'dashboard.html';
+
+                window.location.href =
+                    "dashboard.html";
+
             }, 900);
+
+
         } catch (error) {
-            message.textContent = 'Unable to reach the backend registration service.';
-            message.className = 'message error';
+
+            console.error(
+                "Signup error:",
+                error
+            );
+
+
+            message.textContent =
+                "⚠️ Backend unavailable. Please start the AGRI MITRA server.";
+
+            message.className =
+                "message error";
+
         }
+
     });
+
 }
+```
