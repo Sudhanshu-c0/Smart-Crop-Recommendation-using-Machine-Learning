@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+```javascript
+>>>>>>> 2701f995008f88afa9d85da95826b4c382fedcde
 const tabButtons = document.querySelectorAll(".tab-btn");
 const authForms = document.querySelectorAll(".auth-form");
 
@@ -40,6 +44,7 @@ if (tabButtons.length > 0) {
     });
 
 }
+<<<<<<< HEAD
 
 
 // ============================================================
@@ -273,3 +278,7 @@ function displayCSVResults(results) {
         tbody.appendChild(row);
     });
 }
+=======
+```
+
+>>>>>>> 2701f995008f88afa9d85da95826b4c382fedcde
