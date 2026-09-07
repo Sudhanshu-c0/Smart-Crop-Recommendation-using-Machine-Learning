@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRI MITRA | Admin Sign Up</title><link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-auth-page">
+    <main class="admin-auth-card">
+        <a class="admin-auth-brand" href="index.html">🌱 AGRI MITRA</a>
+        <span class="eyebrow">Administrator access</span>
+        <h1>Create Admin Account</h1>
+        <p>Set up a separate administrator account for the AGRI MITRA dashboard.</p>
+        <form id="adminSignupForm">
+            <label for="adminSignupName">Admin name</label><input id="adminSignupName" name="name" type="text" placeholder="Administrator name" required>
+            <label for="adminSignupEmail">Admin email</label><input id="adminSignupEmail" name="email" type="email" placeholder="admin@agrimitra.com" required>
+            <label for="adminSignupPassword">Password</label><div class="admin-password-field"><input id="adminSignupPassword" name="password" type="password" placeholder="At least 6 characters" minlength="6" required><button class="admin-password-toggle" type="button" data-password-target="adminSignupPassword" aria-label="Show password">👁</button></div>
+            <button class="btn-primary" type="submit">Create Admin Account →</button>
+            <div id="adminSignupMessage" class="admin-auth-message" aria-live="polite"></div>
+        </form>
+        <div class="admin-auth-links"><a href="login.html">User Login</a><a href="admin-login.html">Admin Login</a></div>
+    </main>
+    <script src="admin-signup.js"></script>
+</body>
+</html>
