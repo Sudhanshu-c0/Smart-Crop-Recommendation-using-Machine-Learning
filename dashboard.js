@@ -2,22 +2,13 @@ const cropForm = document.getElementById("cropForm");
 
 
 // ============================================================
-<<<<<<< HEAD
 // AGRI MITRA - CROP PREDICTION (FRONTEND ONLY)
 // Uses predictCrop() from crop-data.js — no server required.
-=======
-// AGRI MITRA - CROP PREDICTION
-// Connects dashboard → Node.js → Python → crop_model.pkl
->>>>>>> 2701f995008f88afa9d85da95826b4c382fedcde
 // ============================================================
 
 if (cropForm) {
 
-<<<<<<< HEAD
     cropForm.addEventListener("submit", (event) => {
-=======
-    cropForm.addEventListener("submit", async (event) => {
->>>>>>> 2701f995008f88afa9d85da95826b4c382fedcde
 
         event.preventDefault();
 
@@ -109,11 +100,7 @@ if (cropForm) {
 
 
         // ------------------------------------------------------
-<<<<<<< HEAD
         // Loading state (brief, since this now runs instantly)
-=======
-        // Loading state
->>>>>>> 2701f995008f88afa9d85da95826b4c382fedcde
         // ------------------------------------------------------
 
         message.textContent =
@@ -137,7 +124,6 @@ if (cropForm) {
 
 
         // ------------------------------------------------------
-<<<<<<< HEAD
         // Fertilizer recommendations
         // ------------------------------------------------------
 
@@ -214,141 +200,21 @@ if (cropForm) {
 
         // ------------------------------------------------------
         // Run local prediction (see crop-data.js)
-=======
-        // Send data to Node.js backend
->>>>>>> 2701f995008f88afa9d85da95826b4c382fedcde
         // ------------------------------------------------------
 
         try {
 
-<<<<<<< HEAD
             if (typeof predictCrop !== "function") {
 
                 throw new Error(
                     "crop-data.js was not loaded."
-=======
-            const response =
-                await fetch(
-                    "http://localhost:3000/api/predict",
-                    {
-
-                        method: "POST",
-
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
-
-                        body:
-                            JSON.stringify(inputData)
-
-                    }
-                );
-
-
-            const data =
-                await response.json();
-
-
-            // --------------------------------------------------
-            // Backend error
-            // --------------------------------------------------
-
-            if (!response.ok) {
-
-                throw new Error(
-                    data.message ||
-                    "Prediction failed."
->>>>>>> 2701f995008f88afa9d85da95826b4c382fedcde
                 );
 
             }
 
 
-<<<<<<< HEAD
             const { crop, confidence } =
                 predictCrop(inputData);
-=======
-            // --------------------------------------------------
-            // Prediction received
-            // --------------------------------------------------
-
-            const crop =
-                data.crop;
-
-
-            const confidence =
-                data.confidence;
-
-
-            // --------------------------------------------------
-            // Fertilizer recommendations
-            // --------------------------------------------------
-
-            const fertilizerMap = {
-
-                rice:
-                    "Nitrogen-rich fertilizer such as Urea with balanced NPK support.",
-
-                maize:
-                    "NPK fertilizer with good nitrogen and phosphorus support.",
-
-                chickpea:
-                    "Phosphorus-rich fertilizer with controlled nitrogen.",
-
-                kidneybeans:
-                    "Phosphorus and potassium fertilizer with limited nitrogen.",
-
-                pigeonpeas:
-                    "Phosphorus-rich fertilizer with organic manure.",
-
-                cotton:
-                    "Balanced NPK fertilizer with additional potassium.",
-
-                jute:
-                    "Nitrogen-rich fertilizer with organic compost.",
-
-                coffee:
-                    "Balanced NPK fertilizer with organic compost.",
-
-                banana:
-                    "Potassium-rich NPK fertilizer with organic manure.",
-
-                papaya:
-                    "Nitrogen and potassium-rich fertilizer with micronutrients.",
-
-                coconut:
-                    "Potassium and magnesium-rich fertilizer with organic manure.",
-
-                orange:
-                    "Balanced NPK fertilizer with potassium and micronutrients.",
-
-                apple:
-                    "Balanced NPK fertilizer with controlled nitrogen.",
-
-                muskmelon:
-                    "Balanced NPK fertilizer with additional potassium.",
-
-                grape:
-                    "Balanced NPK fertilizer with micronutrient support.",
-
-                watermelon:
-                    "Potassium-rich fertilizer with proper irrigation support.",
-
-                mungbean:
-                    "Phosphorus-rich fertilizer with controlled nitrogen.",
-
-                lentil:
-                    "Phosphorus-rich fertilizer with limited nitrogen.",
-
-                pomegranate:
-                    "Balanced NPK fertilizer with additional potassium.",
-
-                mango:
-                    "Balanced NPK fertilizer with organic compost."
-
-            };
->>>>>>> 2701f995008f88afa9d85da95826b4c382fedcde
 
 
             const fertilizer =
@@ -403,11 +269,7 @@ if (cropForm) {
 
 
             message.textContent =
-<<<<<<< HEAD
                 "❌ Unable to generate a prediction.";
-=======
-                "❌ Unable to connect to the prediction server.";
->>>>>>> 2701f995008f88afa9d85da95826b4c382fedcde
 
             message.className =
                 "message error";
@@ -418,11 +280,7 @@ if (cropForm) {
 
 
             resultSummary.textContent =
-<<<<<<< HEAD
                 "Something went wrong loading the prediction data.";
-=======
-                "Make sure the AGRI MITRA backend is running.";
->>>>>>> 2701f995008f88afa9d85da95826b4c382fedcde
 
             resultConfidence.textContent =
                 "Confidence: --";
@@ -435,7 +293,3 @@ if (cropForm) {
     });
 
 }
-<<<<<<< HEAD
-=======
-```
->>>>>>> 2701f995008f88afa9d85da95826b4c382fedcde
